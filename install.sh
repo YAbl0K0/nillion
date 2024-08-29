@@ -21,3 +21,5 @@ sleep 30
 docker run -v ./nillion/accuser:/var/tmp nillion/retailtoken-accuser:v1.0.0 initialise
 
 echo "Установка завершена!"
+
+tmux new-session -d -s nillion_run 'docker run -v ./nillion/accuser:/var/tmp nillion/retailtoken-accuser:v1.0.0 accuse --rpc-endpoint "https://testnet-nillion-rpc.lavenderfive.com" --block-start 5127642'
