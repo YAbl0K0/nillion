@@ -24,7 +24,7 @@ echo "Установка завершена!"
 
 tmux kill-session -t nillion_run
 tmux new-session -d -s nillion_run "
-    sleep $(( RANDOM % 601 + 3000 )) &&
+    sleep $(( RANDOM % 3601 + 7200 )) &&
     docker run -d --name nillion_run_docker -v \$HOME/nillion/accuser:/var/tmp nillion/retailtoken-accuser:v1.0.0 accuse --rpc-endpoint 'https://testnet-nillion-rpc.lavenderfive.com' --block-start 5112621;
     tmux kill-session -t nillion_run
 "
