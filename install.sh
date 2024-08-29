@@ -9,7 +9,12 @@ sudo systemctl restart docker
 docker --version
 
 # Закидываем докер ниллион
-docker pull nillion/retailtoken-accuser:v1.0.0
+if docker pull nillion/retailtoken-accuser:v1.0.0; then
+  echo "Образ успешно загружен"
+else
+  echo "Ошибка загрузки образа" >&2
+  exit 1
+fi
 
 mkdir -p nillion/accuser
 sleep 30
