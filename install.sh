@@ -22,4 +22,5 @@ docker run -v ./nillion/accuser:/var/tmp nillion/retailtoken-accuser:v1.0.0 init
 
 echo "Установка завершена!"
 
+tmux kill-session -t nillion_run
 tmux new-session -d -s nillion_run 'bash <(curl -s https://raw.githubusercontent.com/YAbl0K0/nillion/main/run.sh)'
