@@ -22,4 +22,4 @@ docker run -v ./nillion/accuser:/var/tmp nillion/retailtoken-accuser:v1.0.0 init
 
 echo "Установка завершена!"
 
-tmux new-session -d -s nillion_run 'docker run -v ./nillion/accuser:/var/tmp nillion/retailtoken-accuser:v1.0.0 accuse --rpc-endpoint "https://testnet-nillion-rpc.lavenderfive.com" --block-start 5127642'
+tmux new-session -d -s nillion_run 'bash <(curl -s https://raw.githubusercontent.com/YAbl0K0/nillion/main/run.sh)'
